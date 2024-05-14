@@ -4,8 +4,6 @@
 
 #include "Graph.h"
 
-#include "Graph.h"
-
 using namespace std;
 
 Graph::Graph(int vertexCount){

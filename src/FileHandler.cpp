@@ -4,10 +4,10 @@
 
 #include "FileHandler.h"
 
-bool FileHandler::openFiles(std::ifstream& infile, std::ofstream& outfile, const std::string& inputFilePath, const std::string& outputFilePath) {
-    infile.open(inputFilePath);
-    outfile.open(outputFilePath);
-    return infile.is_open() && outfile.is_open();
+bool FileHandler::openFiles(std::ifstream& inputFile, std::ofstream& outputFile, const std::string& FilePathInput, const std::string& FilePathOutput) {
+    inputFile.open(FilePathInput);
+    outputFile.open(FilePathOutput);
+    return inputFile.is_open() && outputFile.is_open();
 }
 
 void FileHandler::closeFiles(std::ifstream& infile, std::ofstream& outfile) {

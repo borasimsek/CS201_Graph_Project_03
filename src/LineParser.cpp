@@ -6,22 +6,22 @@
 #include "LineParser.h"
 #include <sstream>
 
-std::string LineParser::trim(const std::string& str) {
-    size_t first = str.find_first_not_of(' ');
+std::string LineParser::trim(const std::string& str_dummy) {
+    size_t first = str_dummy.find_first_not_of(' ');
     if (first == std::string::npos) return "";
-    size_t last = str.find_last_not_of(' ');
-    return str.substr(first, (last - first + 1));
+    size_t last = str_dummy.find_last_not_of(' ');
+    return str_dummy.substr(first, (last - first + 1));
 }
 
-void LineParser::parseLine(const std::string& line, std::string& lhs, std::string& rhs) {
+void LineParser::parseLine(const std::string& line, std::string& left_hs, std::string& rigth_hs) {
     std::stringstream ss(line);
-    getline(ss, lhs, '=');
-    getline(ss, rhs);
-    lhs = trim(lhs);
-    rhs = trim(rhs);
+    getline(ss, left_hs, '=');
+    getline(ss, rigth_hs);
+    left_hs = trim(left_hs);
+    rigth_hs = trim(rigth_hs);
 }
-bool LineParser::isVariableUsed(const std::string& expression, const std::string& variable) {
-    std::stringstream ss(expression);
+bool LineParser::isVariableUsed(const std::string& statement, const std::string& variable) {
+    std::stringstream ss(statement);
     std::string token;
     while (ss >> token) {
         if (token == variable) {

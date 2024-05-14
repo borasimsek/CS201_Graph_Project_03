@@ -14,10 +14,8 @@ class FileHandler {
     //closeFiles function closes the input and output files.
     //openFiles function returns true if both files are opened successfully.
     //closeFiles function does not return anything.
-    //openFiles function takes 4 parameters: 2 ifstream references, 2 strings.
-    //closeFiles function takes 2 parameters: 2 ifstream references.
 public:
-    static bool openFiles(std::ifstream& infile, std::ofstream& outfile, const std::string& inputFilePath, const std::string& outputFilePath);
+    static bool openFiles(std::ifstream& inputFile, std::ofstream& outputFile, const std::string& FilePathInput, const std::string& FilePathOutput);
     static void closeFiles(std::ifstream& infile, std::ofstream& outfile);
 };
 

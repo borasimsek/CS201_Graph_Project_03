@@ -19,9 +19,9 @@ class LineParser {
     //parseLine function does not return anything.
     //isVariableUsed function returns a boolean.
 public:
-    static std::string trim(const std::string& str);
-    static void parseLine(const std::string& line, std::string& lhs, std::string& rhs);
-    static bool isVariableUsed(const std::string& expression, const std::string& variable);
+    static std::string trim(const std::string& str_dummy);
+    static void parseLine(const std::string& line, std::string& left_hs, std::string& rigth_hs);
+    static bool isVariableUsed(const std::string& statement, const std::string& variable);
 };
 
 
