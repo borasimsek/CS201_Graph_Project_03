@@ -51,9 +51,7 @@ int main() {
 
 
         if (left_hs.find("if") != std::string::npos) {
-            // Add self-dependency for the if condition line
-            graph.addEdge(i, i);
-
+            // Add dependency for the if condition line, by looking at the right-hand side variables
             // Check each variable in the expression on the right-hand side for dependencies
             std::stringstream ss(right_hs);
             std::string token;
@@ -70,8 +68,7 @@ int main() {
             indentationLevel++;
         }
         if (left_hs.find("while") != std::string::npos) {
-            // Add self-dependency for the while condition line
-            graph.addEdge(i, i);
+            // Add dependency for the while condition line, by looking at the right-hand side variables
 
             // Check each variable in the expression on the right-hand side for dependencies
             std::stringstream ss(right_hs);
